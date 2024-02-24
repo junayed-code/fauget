@@ -1,0 +1,22 @@
+.btn {
+  --bg-color: rgb(0, 0, 0, 0);
+  font-weight: 500;
+  padding: 0.45em 2em;
+  border-radius: 2rem;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--bg-color);
+  transition: transform 200ms ease-in-out;
+}
+.btn:hover {
+  transform: scale(1.025);
+}
+.btn:active {
+  transform: scale(0.95);
+}
+.primary {
+  --bg-color: var(--color-black-900);
+}
+.secondary {
+  --bg-color: var(--color-gray-500);
+}
