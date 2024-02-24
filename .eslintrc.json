@@ -5,6 +5,8 @@
     "node": true
   },
   "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
     "standard-with-typescript",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
@@ -15,7 +17,16 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "overrides": [
+    {
+      "extends": ["plugin:@typescript-eslint/disable-type-checked"],
+      "files": ["./next.config.mjs"]
+    }
+  ],
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
+    "no-unused-vars": "error"
   }
 }
