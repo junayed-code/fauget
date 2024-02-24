@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --sidebar-width: 16rem;
+    --header-height: 5rem;
+
+    --color-primary-400: rgb(3, 238, 210);
+    --color-primary-600: rgb(0, 113, 130);
+    --color-black-800: rgb(30, 30, 30);
+    --color-black-900: rgb(6, 6, 6);
+    --color-gray-500: rgb(59, 59, 59);
+
+    --gradient-v1: linear-gradient(
+      to right,
+      var(--color-primary-400),
+      #007182 30%
+    );
+    --gradient-v2: linear-gradient(
+      to right,
+      var(--color-primary-400),
+      rgba(0, 113, 130, 0.25) 30%
+    );
+  }
+}
