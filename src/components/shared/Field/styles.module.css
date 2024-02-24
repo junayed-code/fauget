@@ -1,0 +1,31 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  width: 100%;
+  outline: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid transparent;
+  background-color: var(--color-black-800);
+}
+.input:focus {
+  border-color: var(--color-primary-400);
+}
+
+.inputLabel {
+  font-size: 1em;
+  padding-bottom: 0.25rem;
+}
+.inputError {
+  color: tomato;
+  font-size: 0.85em;
+  padding-top: 0.15rem;
+}
+.inputLabel,
+.inputError {
+  user-select: none;
+  padding-left: 0.25rem;
+}
