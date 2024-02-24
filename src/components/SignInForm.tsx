@@ -75,7 +75,7 @@ function SignInForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="mt-2 self-start disabled:opacity-60 disabled:cursor-not-allowed"
+          className="mt-2 self-start disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Submitting..." : "Sign in"}
         </Button>

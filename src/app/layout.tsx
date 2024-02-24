@@ -3,7 +3,7 @@ import { inter, unbounded } from "@/fonts";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import ProvidersWrapper from "@/providers/ProvidersWrapper";
-import { RootContainer, PageContainer, Main } from "@/components/composition";
+import { PageContainer, Main, RootContainer } from "@/components/composition";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${unbounded.variable}`}>
-      <body className="font-inter overflow-hidden">
+      <body className="font-inter bg-[var(--color-black-800)] text-slate-100">
         <RootContainer>
           <ProvidersWrapper>
             <Sidebar />

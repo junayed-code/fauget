@@ -1,11 +1,8 @@
 import type { ReactNode } from "react";
+import styles from "./styles.module.css";
 
 function PageContainer({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex-1 bg-[var(--color-black-800)] flex flex-col">
-      {children}
-    </div>
-  );
+  return <div className={styles.container}>{children}</div>;
 }
 
 export default PageContainer;

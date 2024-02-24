@@ -1,36 +1,42 @@
-import { useEffect, type ReactNode, type RefObject } from "react";
-import styles from "./styles.module.css";
+"use client";
 
-function Modal({
-  open,
-  children,
-  modalRef,
-  onClose,
-}: {
-  open?: boolean;
-  children: ReactNode;
-  modalRef?: RefObject<HTMLDialogElement>;
-  onClose?: (e: any) => any;
-}) {
+import styles from "./styles.module.css";
+import SignInForm from "@/components/SignInForm";
+import SignUpForm from "@/components/SignUpForm";
+import { CloseIcon } from "@/components/icons";
+import { useEffect, useRef } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+
+function Modal() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  const modal = searchParams.get("modal");
+  const isModalOpen = modal === "signin" || modal === "signup";
+
   useEffect(() => {
-    if (open) modalRef?.current?.showModal();
+    if (isModalOpen) modalRef?.current?.showModal();
     else modalRef?.current?.close();
-  }, [open, modalRef]);
+  }, [isModalOpen, modalRef]);
 
   return (
-    <dialog ref={modalRef} className={styles.modal} onClose={onClose}>
+    <dialog
+      ref={modalRef}
+      className={styles.modal}
+      onClose={() => router.replace("/")}
+    >
       <div className={styles.modalBox}>
         <form method="dialog" className={styles.modalCloseBtn}>
-          <button>&times;</button>
+          <button>
+            <CloseIcon />
+          </button>
         </form>
-        {children}
+        {modal === "signin" && <SignInForm />}
+        {modal === "signup" && <SignUpForm />}
       </div>
     </dialog>
   );
 }
-
-export const openModal = (modalRef: RefObject<HTMLDialogElement>) => {
-  modalRef.current?.showModal();
-};
 
 export default Modal;

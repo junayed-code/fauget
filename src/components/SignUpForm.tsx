@@ -85,7 +85,7 @@ function SignUpForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="mt-2 self-start"
+          className="mt-2 self-start disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Submitting..." : "Create an account"}
         </Button>

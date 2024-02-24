@@ -24,4 +24,12 @@
       rgba(0, 113, 130, 0.25) 30%
     );
   }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
